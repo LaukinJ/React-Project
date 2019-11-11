@@ -1,8 +1,11 @@
 import React from 'react'
 import '../index/index.css'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Avatar, Badge } from 'antd';
 import Date from '../../components/Date/Date'
+import Goods from '../../components/Goods/Good'
+import GoodsSingle from '../../components/GoodsSingle/GoodsSingle'
 import LogoImg from '../../img/logo.png'
+import UserImg from '../../img/timg.jfif'
 import {
     // htm5的浏览器路由模式
     BrowserRouter as Router,
@@ -23,14 +26,14 @@ export default class Alayout extends React.Component {
                 <Layout>
                     <Header className="header">
                         <div className="logo" />
-                        
+
                         <Menu
                             theme="dark"
                             mode="horizontal"
                             defaultSelectedKeys={['6']}
                             style={{ lineHeight: '64px' }}
                         >
-                            <Menu.Item key="0"><img className="logoImg" src={LogoImg} alt=""/></Menu.Item>
+                            <Menu.Item key="0"><img className="logoImg" src={LogoImg} alt="" /></Menu.Item>
                             <Menu.Item key="1">
                                 <Icon type="home" />
                                 首页</Menu.Item>
@@ -39,7 +42,14 @@ export default class Alayout extends React.Component {
                             <Menu.Item key="4">现金管理</Menu.Item>
                             <Menu.Item key="5">CMS</Menu.Item>
                             <Menu.Item key="6">IMS</Menu.Item>
+                            <span style={{ marginLeft: 700 }}>
+                                <Badge count={1}>
+                                    <Avatar shape="square" icon="user" src={UserImg}/>
+                                </Badge>
+                                <span style={{ marginLeft: 20 }}>奥利给-(餐厅经理)</span>
+                            </span>
                         </Menu>
+
                     </Header>
                     <Content style={{ padding: '0 50px' }}>
                         <Breadcrumb style={{ margin: '16px 0' }}>
@@ -73,10 +83,7 @@ export default class Alayout extends React.Component {
                                         </span>
                                         }
                                     >
-                                        <Menu.Item key="5">option5</Menu.Item>
-                                        <Menu.Item key="6">option6</Menu.Item>
-                                        <Menu.Item key="7">option7</Menu.Item>
-                                        <Menu.Item key="8">option8</Menu.Item>
+                                        <Menu.Item key="5"><Link to="/GoodsSingle">进货单</Link></Menu.Item>
                                     </SubMenu>
                                     <SubMenu
                                         key="sub3"
@@ -112,7 +119,7 @@ export default class Alayout extends React.Component {
                                         </span>
                                         }
                                     >
-                                        <Menu.Item key="14">option14</Menu.Item>
+                                        <Menu.Item key="14"><Link to="/Goods">调拨单</Link></Menu.Item>
                                     </SubMenu>
                                     <SubMenu
                                         key="sub6"
@@ -141,9 +148,16 @@ export default class Alayout extends React.Component {
                             <Content style={{ padding: '0 24px', minHeight: 280 }}>
                                 <Switch>
                                     <Route path="/Date">
-                                        <Date  />
+                                        <Date />
+                                    </Route>
+                                    <Route path="/Goods">
+                                        <Goods />
+                                    </Route>
+                                    <Route path="/GoodsSingle">
+                                        <GoodsSingle />
                                     </Route>
                                 </Switch>
+                                <Redirect to="/Date" />
                             </Content>
                         </Layout>
                     </Content>
