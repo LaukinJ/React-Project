@@ -43,13 +43,25 @@ export default class Goods extends React.Component {
                     ),
                 },
                 {
-                    title: '删除',
+                    title: '调拨单详情',
+                    dataIndex: 'details',
+                    key: 'details',
+                    render: (text, record) => (
+                        <span>
+                            {/* <a>Invite {record.name}</a> */}
+                            {/* <Divider type="vertical" /> */}
+                            <a>详情</a>
+                        </span>
+                    ),
+                },
+                {
+                    title: '确认入库',
                     key: 'action',
                     render: (text, record) => (
                         <span>
                             {/* <a>Invite {record.name}</a> */}
                             {/* <Divider type="vertical" /> */}
-                            <a>Delete</a>
+                            <a>确认</a>
                         </span>
                     ),
                 },

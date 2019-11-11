@@ -23,33 +23,26 @@ export default class GoodsSingle extends React.Component {
                     key: 'address',
                 },
                 {
-                    title: '备注',
+                    title: '订单详情',
                     key: 'tags',
                     dataIndex: 'tags',
-                    render: tags => (
+                    key: 'tags',
+                    render: (text, record) => (
                         <span>
-                            {tags.map(tag => {
-                                let color = tag.length > 5 ? 'geekblue' : 'green';
-                                if (tag === 'loser') {
-                                    color = 'volcano';
-                                }
-                                return (
-                                    <Tag color={color} key={tag}>
-                                        {tag.toUpperCase()}
-                                    </Tag>
-                                );
-                            })}
+                            {/* <a>Invite {record.name}</a> */}
+                            {/* <Divider type="vertical" /> */}
+                            <a>详情</a>
                         </span>
                     ),
                 },
                 {
-                    title: '删除',
+                    title: '物流评价',
                     key: 'action',
                     render: (text, record) => (
                         <span>
                             {/* <a>Invite {record.name}</a> */}
                             {/* <Divider type="vertical" /> */}
-                            <a>Delete</a>
+                            <a>评价</a>
                         </span>
                     ),
                 },
@@ -58,23 +51,23 @@ export default class GoodsSingle extends React.Component {
                 {
                     key: '1',
                     name: '2019-11-12',
-                    age: '',
-                    address: 'GZH241',
-                    tags: ['对方需求'],
+                    age: 'PG1954149884898498261984',
+                    address: '候萨利',
+
                 },
                 {
                     key: '2',
                     name: '2019-11-11',
-                    age: 'GZH279',
-                    address: 'GZH241',
-                    tags: ['打错调拨，补打'],
+                    age: 'PG195498841561261591591',
+                    address: '韩家常',
+
                 },
                 {
                     key: '3',
                     name: '2019-11-10',
-                    age: 'GZH279',
-                    address: 'GZH241',
-                    tags: ['对方需求'],
+                    age: 'PG195498841561261591591',
+                    address: '李劳美',
+
                 },
             ]
 
