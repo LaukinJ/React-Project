@@ -35,7 +35,7 @@ export default class Alayout extends React.Component {
                             defaultSelectedKeys={['6']}
                             style={{ lineHeight: '64px' }}
                         >
-                            <Menu.Item key="0"><img className="logoImg" src={LogoImg} alt="" /></Menu.Item>
+                            {/* <Menu.Item key="0"><img className="logoImg" src={LogoImg} alt="" /></Menu.Item> */}
                             <Menu.Item key="1">
                                 <Icon type="home" />
                                 首页</Menu.Item>
@@ -166,7 +166,7 @@ export default class Alayout extends React.Component {
                             </Content>
                         </Layout>
                     </Content>
-                    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                    <Footer style={{ textAlign: 'center' }}>©2019 Created by 开封菜</Footer>
                 </Layout>
             </Router>
         )
