@@ -9,13 +9,11 @@ export default class GoodsSingle extends React.Component {
                 {
                     title: '日期',
                     dataIndex: 'name',
-                    key: 'name',
                     render: text => <a>{text}</a>,
                 },
                 {
                     title: '订单号',
                     dataIndex: 'age',
-                    key: 'age',
                 },
                 {
                     title: '签收人',
@@ -26,7 +24,6 @@ export default class GoodsSingle extends React.Component {
                     title: '订单详情',
                     key: 'tags',
                     dataIndex: 'tags',
-                    key: 'tags',
                     render: (text, record) => (
                         <span>
                             {/* <a>Invite {record.name}</a> */}
