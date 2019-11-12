@@ -4,6 +4,8 @@ import { Layout, Menu, Breadcrumb, Icon, Avatar, Badge } from 'antd';
 import Date from '../../components/Date/Date'
 import Goods from '../../components/Goods/Good'
 import GoodsSingle from '../../components/GoodsSingle/GoodsSingle'
+import Indent from '../../components/Indent/Indent'
+import TakeStock from '../../components/TakeStock/TakeStock'
 import LogoImg from '../../img/logo.png'
 import UserImg from '../../img/timg.jfif'
 import {
@@ -44,7 +46,7 @@ export default class Alayout extends React.Component {
                             <Menu.Item key="6">IMS</Menu.Item>
                             <span style={{ marginLeft: 700 }}>
                                 <Badge count={1}>
-                                    <Avatar shape="square" icon="user" src={UserImg}/>
+                                    <Avatar shape="square" icon="user" src={UserImg} />
                                 </Badge>
                                 <span style={{ marginLeft: 20 }}>奥利给-(餐厅经理)</span>
                             </span>
@@ -94,10 +96,7 @@ export default class Alayout extends React.Component {
                                         </span>
                                         }
                                     >
-                                        <Menu.Item key="9">option9</Menu.Item>
-                                        <Menu.Item key="10">option10</Menu.Item>
-                                        <Menu.Item key="11">option11</Menu.Item>
-                                        <Menu.Item key="12">option12</Menu.Item>
+                                        <Menu.Item key="9"><Link to="/Indent">订货</Link></Menu.Item>
                                     </SubMenu>
                                     <SubMenu
                                         key="sub4"
@@ -108,7 +107,7 @@ export default class Alayout extends React.Component {
                                         </span>
                                         }
                                     >
-                                        <Menu.Item key="13">option13</Menu.Item>
+                                        <Menu.Item key="13"><Link to="/TakeStock">周月盘</Link></Menu.Item>
                                     </SubMenu>
                                     <SubMenu
                                         key="sub5"
@@ -155,6 +154,12 @@ export default class Alayout extends React.Component {
                                     </Route>
                                     <Route path="/GoodsSingle">
                                         <GoodsSingle />
+                                    </Route>
+                                    <Route path="/Indent">
+                                        <Indent />
+                                    </Route>
+                                    <Route path="/TakeStock">
+                                        <TakeStock />
                                     </Route>
                                 </Switch>
                                 <Redirect to="/Date" />
