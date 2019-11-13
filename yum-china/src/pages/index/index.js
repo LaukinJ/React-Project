@@ -6,7 +6,8 @@ import Goods from '../../components/Goods/Good'
 import GoodsSingle from '../../components/GoodsSingle/GoodsSingle'
 import Indent from '../../components/Indent/Indent'
 import TakeStock from '../../components/TakeStock/TakeStock'
-import LogoImg from '../../img/logo.png'
+import WriteReport from '../../components/WriteReport/WriteReport'
+// import LogoImg from '../../img/logo.png'
 import UserImg from '../../img/timg.jfif'
 import {
     // htm5的浏览器路由模式
@@ -129,7 +130,7 @@ export default class Alayout extends React.Component {
                                         </span>
                                         }
                                     >
-                                        <Menu.Item key="15">option15</Menu.Item>
+                                        <Menu.Item key="15"><Link to="/WriteReport">周月报生成</Link></Menu.Item>
                                     </SubMenu>
                                     <SubMenu
                                         key="sub7"
@@ -160,6 +161,9 @@ export default class Alayout extends React.Component {
                                     </Route>
                                     <Route path="/TakeStock">
                                         <TakeStock />
+                                    </Route>
+                                    <Route path="/WriteReport">
+                                        <WriteReport />
                                     </Route>
                                 </Switch>
                                 <Redirect to="/Date" />
